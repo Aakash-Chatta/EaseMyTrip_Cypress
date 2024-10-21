@@ -1,0 +1,25 @@
+{
+  "name": "easemytrip",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cy_browser:headed": "npx cypress run --browser=chrome --headed --reporter mocha-allure-reporter",
+    "cy_browser:ui": "npx cypress run --browser=chrome --runner-ui --reporter mocha-allure-reporter",
+    "cy_browser:headless": "npx cypress run --browser=chrome --reporter mocha-allure-reporter",
+    "cy_test": "npx cypress run",
+    "cy_report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "allure-commandline": "^2.30.0",
+    "cypress": "^13.15.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "mocha-allure-reporter": "^1.4.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/tests/"
+  }
+}
