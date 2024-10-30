@@ -6,7 +6,7 @@ before(() => {
     cy.viewport(1920,1080)
 
 })
-Given("User navigates to EaseMyTrip website", () => {
+Given("User navigates to EaseMyTrip Hotels website", () => {
     pg1.enterURL()
 });
 Then("User selects city as {string}", function (city) {
