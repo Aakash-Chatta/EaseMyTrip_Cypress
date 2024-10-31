@@ -7,6 +7,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on("file:preprocessor", cucumber());
       // implement node event listeners here
+
     },
   },
+  viewportHeight:1080,
+  viewportWidth:1920
 });

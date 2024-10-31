@@ -1,11 +1,6 @@
 import { Given, Then} from "cypress-cucumber-preprocessor/steps";
 import pg1 from "../pages/Hotel_page";
 
-before(() => {
-
-    cy.viewport(1920,1080)
-
-})
 Given("User navigates to EaseMyTrip Hotels website", () => {
     pg1.enterURL()
 });
