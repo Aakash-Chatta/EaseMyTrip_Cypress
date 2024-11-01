@@ -1,4 +1,5 @@
 {
   "url":"https://www.easemytrip.com/flights",
-  "oneway": "#oway"
+  "oneway": "#oway",
+  "calender_month": ".main div[class='month2']"
 }
