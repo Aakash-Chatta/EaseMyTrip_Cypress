@@ -14,17 +14,17 @@ class flights{
             cy.visit(flight.url);
             cy.get(flight.oneway).should('be.visible')
         }
-        selectfromcity(city){
+        select_from_city(city){
             cy.get(flight.from_city).click()
             cy.get(flight.from_city_search).type(city)
             cy.get(flight.select_city).click()
         }
-        selecttocity(city){
+        select_to_city(city){
             cy.get(flight.to_city).click()
             cy.get(flight.to_city_search).type(city)
             cy.get(flight.select_to_city).click()
         }
-        selectdate(date, month, year) {
+        select_date(date, month, year) {
             cy.get(flight.calender).click();
             let mon_year = month + " " + year;
             let actual_mon_year = " ";
@@ -55,6 +55,18 @@ class flights{
                 return false
             })
         }
+    journey_type(journey){
+            let i=0
+            cy.get("._freitex").each(($element)=>{
+                const text=$element.text()
+                cy.log(text)
+                if(text.includes(journey)){
+                    cy.log("Passssssssssss")
+                    cy.get('.checkmark-journey').eq(i).click()
+                    return false
+                }else {i++}
+            })
+            }
     }
 const pg2=new flights();
 export default pg2;

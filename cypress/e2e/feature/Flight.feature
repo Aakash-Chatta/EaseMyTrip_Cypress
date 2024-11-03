@@ -7,7 +7,7 @@ Feature: To check different scenarios in EaseMyTrip using Cypress
     Then User selects date as "25" and month as "Dec" year as "2024"
     Then User selects class as "Business"
     Then User searches for flights and selects first flight
-#    Then User selects "EaseFly" option
+    Then User selects "EaseFly" option
 #    Then User selects "Yes" in trip insurance
 #    When User Clicks continue it
 #    Then Validation error should be visible
