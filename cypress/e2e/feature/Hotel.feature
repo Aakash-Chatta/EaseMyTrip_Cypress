@@ -1,7 +1,7 @@
 Feature: To check different scenarios in EaseMyTrip using Cypress
 
   Scenario: Book a hotel
-    Given User navigates to EaseMyTrip website
+    Given User navigates to EaseMyTrip Hotels website
     Then User selects city as "New Delhi"
     When User selects checkin date as "20" month as "Dec" year as "2024"
     Then User selects checkout date as "24" month as "Dec" year as "2024"
