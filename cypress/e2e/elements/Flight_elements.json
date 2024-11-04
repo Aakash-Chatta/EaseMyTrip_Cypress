@@ -16,8 +16,9 @@
   "search": ".srchBtnSe",
   "book": ".row button[class='btn book-bt-n ng-scope']",
   "medical": "#divReview > div:nth-child(14) > div.insurencediv > div.insur-yes > label",
-  "insurance":"#divInsuranceTab > div.insurencediv > div.insur-yes > label",
-  "journey_type": "._freitex",
+  "insurance":"#divInsuranceTab .checkmark-radio",
+  "journey_package": "._freitex",
+  "journey_package_checkbox": ".checkmark-journey",
   "email_stage1": "#txtEmailId",
   "error": ".alert.alert-danger.error_case.ng-binding",
   "title": "#titleAdult0",
@@ -27,5 +28,6 @@
   "contact_no": "#txtCPhoneAdult0",
   "phone_no": "#txtCPhone",
   "continue_transaction": "#spnTransaction",
-  "skip_seats": "#skipPop"
+  "skip_seats": "#skipPop",
+  "continue_booking": "#spnVerifyEmail"
 }

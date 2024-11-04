@@ -55,18 +55,40 @@ class flights{
                 return false
             })
         }
-    journey_type(journey){
+        journey_type(journey){
             let i=0
-            cy.get("._freitex").each(($element)=>{
+            cy.get(flight.journey_package).each(($element)=>{
                 const text=$element.text()
                 cy.log(text)
                 if(text.includes(journey)){
-                    cy.log("Passssssssssss")
-                    cy.get('.checkmark-journey').eq(i).click()
+                    cy.get(flight.journey_package_checkbox).eq(i).click()
                     return false
                 }else {i++}
             })
             }
+        get_insured(choice){
+        if (choice==="Yes"){
+            cy.get(flight.insurance).eq(0).click()
+        }else {cy.get(flight.insurance).eq(1).click()}
+        }
+        check_validation(){
+            cy.get(flight.continue_booking).click()
+            cy.get(flight.error).should('contain.text',"Please enter a valid email Id")
+        }
+        enter_email(email){
+            cy.get(flight.email_stage1).type(email)
+            cy.get(flight.continue_booking).click()
+        }
+        enter_details(titles,Fn,Ln,email,contact){
+            cy.get(flight.title).select(titles)
+            cy.get(flight.fn).type(Fn)
+            cy.get(flight.ln).type(Ln)
+            cy.get(flight.email_stage2).type(email)
+            cy.get(flight.contact_no).type(contact)
+            cy.get(flight.phone_no).type(contact)
+            cy.get(flight.continue_transaction).click()
+            
     }
+}
 const pg2=new flights();
 export default pg2;
