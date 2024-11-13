@@ -30,5 +30,7 @@
   "room2_fn": "#DivTravellerDetails > div.roomSec > div:nth-child(3) input#txtFirstName1",
   "room2_ln": "#DivTravellerDetails > div.roomSec > div:nth-child(3) input#txtLastName1",
   "email": "#txtEmailId",
-  "phoneno": "#txtCPhone"
+  "phoneno": "#txtCPhone",
+  "view_room": ".price-dtl.ng-scope .ng-scope .viewBtn",
+  "book_room": ".btnhcolnv2 .fill-btn"
 }

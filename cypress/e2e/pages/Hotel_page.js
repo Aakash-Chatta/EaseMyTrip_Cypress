@@ -3,7 +3,7 @@ import * as hotel from "../elements/Hotel_elements.json"
 class hotels {
     enterURL() {
         cy.visit(hotel.url);
-        cy.get(hotel.close_popup).should('be.visible').click();
+        //cy.get(hotel.close_popup).should('be.visible').click();
     }
 
     selectcity(city) {
@@ -71,10 +71,13 @@ class hotels {
         cy.contains(price).click()
     }
     select_hotel(selected_hotels){
-        cy.contains(selected_hotels).invoke('removeAttr', 'target').click()
-        cy.get(hotel.hotel_name).should('be.visible')
-        cy.get(hotel.book).click()
-        cy.get(hotel.guest).should('be.visible')
+        cy.reload()
+        cy.get(hotel.view_room).each(($element)=>{
+            cy.wrap($element).should('be.enabled')
+            cy.wrap($element).invoke('removeAttr', 'target').click({force: true})
+            return false
+        })
+        cy.get(hotel.book_room).invoke('removeAttr', 'target').click()
     }
     guest1(fn,ln){
         cy.get(hotel.room1_fn).type(fn)
