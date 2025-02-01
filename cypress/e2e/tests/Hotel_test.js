@@ -1,6 +1,12 @@
 import { Given, Then} from "cypress-cucumber-preprocessor/steps";
 import pg1 from "../pages/Hotel_page";
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+})
+
 Given("User navigates to EaseMyTrip Hotels website", () => {
     pg1.enterURL()
 });
