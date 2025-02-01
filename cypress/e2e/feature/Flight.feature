@@ -4,7 +4,7 @@ Feature: To check different scenarios in EaseMyTrip using Cypress
     Given User navigates to EaseMyTrip Flight website
     Then User selects from city as "New delhi"
     Then User selects to city as "Pune"
-    Then User selects date as "25" and month as "Dec" year as "2024"
+    Then User selects date as "25" and month as "Dec" year as "2025"
     Then User selects class as "Business"
     Then User searches for flights and selects first flight
     Then User selects "EaseFly" option

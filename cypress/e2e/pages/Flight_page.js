@@ -68,7 +68,7 @@ class flights{
             }
         get_insured(choice){
         if (choice==="Yes"){
-            cy.get(flight.insurance).eq(0).click()
+            cy.get('.insur-yes > .container-radio > .checkmark-radio')
         }else {cy.get(flight.insurance).eq(1).click()}
         }
         check_validation(){

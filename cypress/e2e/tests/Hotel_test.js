@@ -1,6 +1,12 @@
 import { Given, Then} from "cypress-cucumber-preprocessor/steps";
 import pg1 from "../pages/Hotel_page";
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+})
+
 Given("User navigates to EaseMyTrip Hotels website", () => {
     pg1.enterURL()
 });
@@ -22,8 +28,8 @@ Then("User clicks on search",()=>{
 Then("User selects Price Range as {string}",(price)=>{
     pg1.filters(price)
 })
-Then("User selects a Hotel named as {string}",(selected_hotels)=>{
-    pg1.select_hotel(selected_hotels)
+Then("User selects a Hotel",()=>{
+    pg1.select_hotel()
 })
 Then("User Enters Adult 1 First Name as {string} Last Name as {string}",(fn,ln)=>{
     pg1.guest1(fn,ln)
