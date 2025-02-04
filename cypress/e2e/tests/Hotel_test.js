@@ -25,9 +25,6 @@ Then("User selects 2 rooms and {string} adult in each room",(adult)=>{
 Then("User clicks on search",()=>{
     pg1.search()
 })
-Then("User selects Price Range as {string}",(price)=>{
-    pg1.filters(price)
-})
 Then("User selects a Hotel",()=>{
     pg1.select_hotel()
 })

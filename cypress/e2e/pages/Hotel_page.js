@@ -67,16 +67,16 @@ class hotels {
     search(){
         cy.get(hotel.search).click()
     }
-    filters(price) {
-        cy.contains(price).click()
-    }
+
     select_hotel(selected_hotels){
-        cy.reload()
-        cy.get(hotel.view_room).each(($element)=>{
-            cy.wrap($element).should('be.enabled')
-            cy.wrap($element).invoke('removeAttr', 'target').click({force: true})
-            return false
+        cy.get("[target=\"_blank\"]").each(($element) => {
+            cy.wrap($element).invoke('removeAttr', 'target')
         })
+        cy.get(hotel.view_room).eq(0).click()
+        // cy.get(hotel.view_room).each(($element)=>{
+        //     cy.wrap($element).scrollIntoView().invoke('removeAttr', 'target').click()
+        //     return false
+        // })
         cy.get(hotel.book_room).invoke('removeAttr', 'target').click()
     }
     guest1(fn,ln){
